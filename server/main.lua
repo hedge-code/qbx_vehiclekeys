@@ -22,14 +22,7 @@ RegisterNetEvent('qb-vehiclekeys:server:GiveVehicleKeys', function(receiver, pla
         return exports.qbx_core:Notify(giver, locale('notify.no_keys'))
     end
 
-    if type(receiver) == 'table' then
-        for i = 1, receiver do
-            giveKeys(receiver[i], plate)
-        end
-    else
-        giveKeys(receiver, plate)
-    end
-
+    giveKeys(receiver, plate)
     exports.qbx_core:Notify(giver, locale('notify.gave_keys'))
 end)
 
